@@ -5,21 +5,16 @@ describe Bike do
 
     it 'can be reported broken' do
       subject.report_broken
-      expect(subject.working?).to eq(false)
+      expect(subject.broken?).to eq(true)
     end
 
     it 'is working when created' do
-
       expect(subject.working?).to eq(true)
-
     end
 
-
-#    it 'is broken when it is not working' do
-
-
-      # expect broken? to be true if working? is false
-#    end
-
+    it 'is broken when not working' do
+      subject.report_broken
+      expect(subject.broken?).to eq(true)
+    end
 
 end
